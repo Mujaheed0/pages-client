@@ -15,6 +15,8 @@ function Home() {
 
   useEffect(() => {
     getPosts();
+  }, []);
+  useEffect(() => {
     setPosts(data);
   }, [data]);
   const handleSearch = (query) => {

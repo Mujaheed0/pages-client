@@ -12,7 +12,7 @@ function App() {
   console.log(token);
   useEffect(() => {
     if (token) dispatch(loggedInUserInfo(token));
-  }, [token]);
+  }, [token, dispatch]);
   return (
     <>
       <Header></Header>
