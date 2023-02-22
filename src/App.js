@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import "./App.css";
+import Header from "./components/Header";
+import Router from "./router";
+import { loggedInUserInfo } from "./store/features/Auth/thunk";
 
 function App() {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem("assignment/user-id");
+  console.log(token);
+  useEffect(() => {
+    if (token) dispatch(loggedInUserInfo(token));
+  }, [token]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header></Header>
+      <Toaster></Toaster>
+      <Router></Router>
+    </>
   );
 }
 
