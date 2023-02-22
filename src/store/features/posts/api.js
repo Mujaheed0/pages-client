@@ -5,8 +5,12 @@ const postsApi = createApi({
   reducerPath: "postsApi",
   baseQuery: fetchBaseQuery({
     baseUrl: backendUrl,
-    headers: {
-      Authorization: `Bearer ${token}`,
+    prepareHeaders: (headers) => {
+      headers.set(
+        "Authorization",
+        `Bearer ${localStorage.getItem("assignment/user-id")}`
+      );
+      return headers;
     },
   }),
   endpoints: (builder) => ({
@@ -24,6 +28,7 @@ const postsApi = createApi({
       },
       query: (data) => ({
         url: "/api/posts",
+
         method: "POST",
         body: data,
       }),
