@@ -17,7 +17,7 @@ export const Modal = ({ openModal, setOpenModal, children }) => {
         >
           <div className="fixed inset-0  bg-slate-500/50"></div>
           <div
-            className=" fixed top-1/2 left-1/2  w-[30rem] -translate-x-1/2 -translate-y-1/2"
+            className=" fixed top-1/2 left-1/2  w-[25rem] -translate-x-1/2 -translate-y-1/2"
             onClick={(e) => e.stopPropagation()}
           >
             {children}

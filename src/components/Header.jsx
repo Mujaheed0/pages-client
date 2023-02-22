@@ -15,12 +15,12 @@ function Header() {
         <div className="flex items-center justify-between gap-4">
           <div className="font font-semibold">Hi {currentUser.name}</div>
           <Button onClick={() => dispatch(signOutHandler())}>
-            <span className="hidden md:inline">Logout</span>
+            <span className="inline">Logout</span>
           </Button>
         </div>
       ) : (
         <Button onClick={() => navigate("/login")}>
-          <span className="hidden md:inline">LOGIN</span>
+          <span className="inline">LOGIN</span>
         </Button>
       )}
     </header>
