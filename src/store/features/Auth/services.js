@@ -1,4 +1,5 @@
 import { toast } from "react-hot-toast";
+import { backendUrl } from "../../../utils/backendUrl";
 
 export const emailPasswordSignUp = async (thunkObj) => {
   const loading = toast.loading("Creating Account");
