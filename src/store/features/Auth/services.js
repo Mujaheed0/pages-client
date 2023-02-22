@@ -41,7 +41,7 @@ export const userLogout = async () => {
   }
 };
 async function signInWithEmailAndPassword(email, password) {
-  const response = await fetch("http://localhost:8080/api/auth/login", {
+  const response = await fetch(`${backendUrl}/api/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
@@ -57,7 +57,7 @@ async function signInWithEmailAndPassword(email, password) {
 }
 
 async function createUserWithEmailAndPassword(name, email, password) {
-  const response = await fetch("http://localhost:8080/api/auth/register", {
+  const response = await fetch(`${backendUrl}/api/auth/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password, name }),
@@ -73,7 +73,7 @@ async function createUserWithEmailAndPassword(name, email, password) {
 }
 
 export async function getUserInfo(token) {
-  const response = await fetch("http://localhost:8080/api/auth/validateUser", {
+  const response = await fetch(`${backendUrl}/api/auth/validateUser`, {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },
   });
