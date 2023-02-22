@@ -20,7 +20,11 @@ export default function AddPost() {
       toast.error("Please enter a title and content for the post.");
       return;
     }
-    addPost(data);
+    addPost({
+      title: data.title,
+      content: data.content,
+      scheduledDate: new Date(data.scheduledDate).toISOString(),
+    });
     reset();
   };
 

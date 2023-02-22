@@ -11,7 +11,7 @@ function Post({ post }) {
       <h2 className="mb-2 text-lg font-medium">{title}</h2>
       <p>{content}</p>
       <p className="text-sm text-gray-500">
-        Scheduled for: {new Date(scheduledDate).toLocaleString()}
+        Scheduled for: {new Date(scheduledDate).toLocaleTimeString()}
       </p>
       <div className="mt-4 flex justify-end">
         <button
